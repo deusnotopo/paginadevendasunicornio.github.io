@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Terapêutica - MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .community-bg {
+            background-image: url('https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        .pricing-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-heart text-blue-500 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-blue-600">Conexão Terapêutica</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Recursos</a>
+                    <a href="#community" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Comunidade</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Planos</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Contato</a>
+                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">Entrar</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Abrir menu</span>
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#features" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Recursos</a>
+                <a href="#community" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Comunidade</a>
+                <a href="#pricing" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Planos</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contato</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-blue-600 hover:bg-blue-50">Entrar</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <div class="lg:w-1/2">
+                <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                    <span class="block">Suporte e conexão</span>
+                    <span class="block text-blue-600">para famílias terapêuticas</span>
+                </h1>
+                <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl md:mt-5 md:text-xl">
+                    Uma plataforma para conectar, compartilhar e aprender com outras famílias em jornadas terapêuticas especiais.
+                </p>
+                <div class="mt-8 sm:flex sm:justify-start">
+                    <div class="rounded-md shadow">
+                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
+                            Comece agora
+                        </a>
+                    </div>
+                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                        <a href="#features" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10">
+                            Saiba mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 mt-8 lg:mt-0">
+                <img class="rounded-lg shadow-xl" src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Família feliz">
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Recursos Essenciais
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                    Tudo o que você precisa para se conectar e aprender
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Feature 1 -->
+                    <div class="feature-card pt-6 transition-all duration-300 ease-in-out">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-blue-500 rounded-md shadow-lg">
+                                        <i class="fas fa-users text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Comunidade Acolhedora</h3>
+                                <p class="mt-5 text-base text-gray-600">
+                                    Grupos de discussão privados onde famílias podem compartilhar experiências, dúvidas e conquistas em um ambiente seguro e moderado.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card pt-6 transition-all duration-300 ease-in-out">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-green-500 rounded-md shadow-lg">
+                                        <i class="fas fa-book-medical text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Biblioteca de Conteúdo</h3>
+                                <p class="mt-5 text-base text-gray-600">
+                                    Artigos, guias e materiais curados por especialistas sobre diversas terapias, desenvolvimento infantil e cuidados especiais.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card pt-6 transition-all duration-300 ease-in-out">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-purple-500 rounded-md shadow-lg">
+                                        <i class="fas fa-calendar-check text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Eventos e Webinars</h3>
+                                <p class="mt-5 text-base text-gray-600">
+                                    Encontros online com terapeutas e especialistas para tirar dúvidas e aprender sobre novas abordagens terapêuticas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card pt-6 transition-all duration-300 ease-in-out">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-yellow-500 rounded-md shadow-lg">
+                                        <i class="fas fa-trophy text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Mural de Conquistas</h3>
+                                <p class="mt-5 text-base text-gray-600">
+                                    Um espaço para celebrar cada vitória, por menor que seja, inspirando outras famílias com histórias de progresso e superação.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card pt-6 transition-all duration-300 ease-in-out">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-red-500 rounded-md shadow-lg">
+                                        <i class="fas fa-map-marker-alt text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Diretório de Profissionais</h3>
+                                <p class="mt-5 text-base text-gray-600">
+                                    Lista de terapeutas e centros especializados indicados pela comunidade, com avaliações e informações de contato.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card pt-6 transition-all duration-300 ease-in-out">
+                        <div class="flow-root bg-gray-50 rounded-lg px-6 pb-8 h-full">
+                            <div class="-mt-6">
+                                <div>
+                                    <span class="inline-flex items-center justify-center p-3 bg-pink-500 rounded-md shadow-lg">
+                                        <i class="fas fa-lock text-white text-2xl"></i>
+                                    </span>
+                                </div>
+                                <h3 class="mt-8 text-lg font-medium text-gray-900 tracking-tight">Privacidade Garantida</h3>
+                                <p class="mt-5 text-base text-gray-600">
+                                    Ambiente seguro com moderação ativa para garantir que todas as interações sejam respeitosas e construtivas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Section -->
+    <div id="community" class="community-bg bg-blue-700 bg-opacity-90 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-blue-200 font-semibold tracking-wide uppercase">Junte-se a nós</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+                    Você não está sozinho nessa jornada
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-blue-100 lg:mx-auto">
+                    Mais de 500 famílias já fazem parte da nossa comunidade
+                </p>
+            </div>
+
+            <div class="mt-10">
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="px-6 py-8">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Ana, mãe do Pedro</h4>
+                                    <p class="text-blue-600">São Paulo</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600">
+                                "Encontrar outras mães que entendem os desafios da equoterapia mudou tudo para nós. Finalmente me senti acolhida e entendida."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="px-6 py-8">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Carlos, pai da Sofia</h4>
+                                    <p class="text-blue-600">Belo Horizonte</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600">
+                                "Os guias sobre comunicação alternativa foram essenciais para ajudar minha filha a se expressar melhor. Gratidão por esse conteúdo!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div class="px-6 py-8">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Mariana">
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-medium text-gray-900">Mariana, mãe do Lucas</h4>
+                                    <p class="text-blue-600">Porto Alegre</p>
+                                </div>
+                            </div>
+                            <p class="mt-4 text-gray-600">
+                                "Celebrar cada pequeno progresso do meu filho no mural de conquistas trouxe uma nova perspectiva para nossa jornada. Recomendo!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-white hover:bg-gray-50">
+                    Veja mais depoimentos
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="pricing" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Planos Acessíveis
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+                    Escolha a opção que melhor atende às suas necessidades
+                </p>
+            </div>
+
+            <div class="mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-3 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0">
+                <!-- Free Plan -->
+                <div class="pricing-card border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200 transition-all duration-300">
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Básico</h2>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">Grátis</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Perfeito para quem quer conhecer a comunidade
+                        </p>
+                        <a href="#" class="mt-8 block w-full bg-gray-200 border border-gray-200 rounded-md py-2 text-sm font-semibold text-gray-700 text-center hover:bg-gray-300">
+                            Cadastre-se
+                        </a>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h3 class="text-xs font-medium text-gray-900 tracking-wide uppercase">O que está incluído</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Acesso à comunidade básica</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Conteúdo gratuito limitado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Eventos gratuitos ocasionais</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card border border-blue-500 rounded-lg shadow-lg divide-y divide-gray-200 transition-all duration-300 transform scale-105 relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-blue-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Mais popular</span>
+                    </div>
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Premium</h2>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">R$29</span>
+                            <span class="text-base font-medium text-gray-500">/mês</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Acesso completo para famílias comprometidas
+                        </p>
+                        <a href="#" class="mt-8 block w-full bg-blue-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-blue-700">
+                            Assinar agora
+                        </a>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h3 class="text-xs font-medium text-gray-900 tracking-wide uppercase">O que está incluído</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Tudo no plano Básico</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Acesso completo à biblioteca</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Webinars exclusivos mensais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Grupos de apoio especializados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Descontos em parceiros</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Family Plan -->
+                <div class="pricing-card border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200 transition-all duration-300">
+                    <div class="p-6">
+                        <h2 class="text-lg leading-6 font-medium text-gray-900">Família</h2>
+                        <p class="mt-4">
+                            <span class="text-4xl font-extrabold text-gray-900">R$99</span>
+                            <span class="text-base font-medium text-gray-500">/ano</span>
+                        </p>
+                        <p class="mt-4 text-sm text-gray-500">
+                            Economize com acesso anual completo
+                        </p>
+                        <a href="#" class="mt-8 block w-full bg-gray-200 border border-gray-200 rounded-md py-2 text-sm font-semibold text-gray-700 text-center hover:bg-gray-300">
+                            Economize 30%
+                        </a>
+                    </div>
+                    <div class="pt-6 pb-8 px-6">
+                        <h3 class="text-xs font-medium text-gray-900 tracking-wide uppercase">O que está incluído</h3>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Tudo no plano Premium</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">2 perfis familiares</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Kit boas-vindas físico</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span class="text-base text-gray-600">Prioridade no suporte</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Perguntas frequentes
+                </h2>
+            </div>
+
+            <div class="mt-12">
+                <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:grid-cols-3">
+                    <!-- FAQ 1 -->
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Como posso me cadastrar?
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-600">
+                            Basta clicar em qualquer botão "Cadastre-se" ou "Comece agora" nesta página. O processo é rápido e simples, sem necessidade de cartão de crédito para o plano básico.
+                        </dd>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Quem pode participar da comunidade?
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-600">
+                            Pais, mães, cuidadores e familiares de crianças em qualquer tipo de terapia ou tratamento especial. Também temos espaço para profissionais que queiram contribuir.
+                        </dd>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Como funciona a privacidade?
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-600">
+                            Todos os grupos são privados e moderados. Suas informações pessoais nunca serão compartilhadas sem sua permissão explícita.
+                        </dd>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Posso cancelar a qualquer momento?
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-600">
+                            Sim, você pode cancelar sua assinatura premium a qualquer momento sem taxas adicionais. Se cancelar no meio do período, ainda terá acesso até o final do ciclo pago.
+                        </dd>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Como são selecionados os profissionais no diretório?
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-600">
+                            Todos os profissionais são indicados por membros da comunidade e verificados por nossa equipe. Também consideramos avaliações e feedbacks dos usuários.
+                        </dd>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div>
+                        <dt class="text-lg leading-6 font-medium text-gray-900">
+                            Vocês oferecem suporte personalizado?
+                        </dt>
+                        <dd class="mt-2 text-base text-gray-600">
+                            Oferecemos suporte via email para todas as dúvidas. Membros premium têm acesso prioritário e podem agendar chamadas com nossa equipe quando necessário.
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-blue-700">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span class="block">Pronto para se conectar?</span>
+                <span class="block text-blue-200">Junte-se à nossa comunidade hoje.</span>
+            </h2>
+            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50">
+                        Comece agora
+                    </a>
+                </div>
+                <div class="ml-3 inline-flex rounded-md shadow">
+                    <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 bg-opacity-60 hover:bg-opacity-70">
+                        Fale conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="lg:text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                    Fale conosco
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-600 lg:mx-auto">
+                    Tem dúvidas ou sugestões? Estamos aqui para ajudar.
+                </p>
+            </div>
+
+            <div class="mt-12">
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900">Informações de contato</h3>
+                                <div class="mt-6 flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-envelope text-blue-500 text-xl"></i>
+                                    </div>
+                                    <div class="ml-3 text-base text-gray-600">
+                                        <p>contato@conexaoterapeutica.com.br</p>
+                                        <p class="mt-1">Respondemos em até 24h</p>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-phone-alt text-blue-500 text-xl"></i>
+                                    </div>
+                                    <div class="ml-3 text-base text-gray-600">
+                                        <p>(11) 98765-4321</p>
+                                        <p class="mt-1">Segunda a sexta, 9h às 18h</p>
+                                    </div>
+                                </div>
+                                <div class="mt-6 flex items-start">
+                                    <div class="flex-shrink-0">
+                                        <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                                    </div>
+                                    <div class="ml-3 text-base text-gray-600">
+                                        <p>Rua das Terapias, 123</p>
+                                        <p>São Paulo - SP</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900">Envie uma mensagem</h3>
+                                <form class="mt-6 space-y-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                                        <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                        <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                    <div>
+                                        <label for="message" class="block text-sm font-medium text-gray-700">Mensagem</label>
+                                        <textarea id="message" name="message" rows="4" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                            Enviar mensagem
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Sobre</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Nossa história</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Equipe</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Parceiros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Recursos</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Guia para pais</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Perguntas frequentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Privacidade</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Termos</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-blue-600">Cookies</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase">Conecte-se</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-blue-600">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-blue-600">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-base text-gray-600">Assine nossa newsletter</p>
+                        <form class="mt-2 flex">
+                            <input type="email" placeholder="Seu email" class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 flex-1">
+                            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-200 pt-8">
+                <p class="text-base text-gray-500 text-center">
+                    &copy; 2023 Conexão Terapêutica. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission (mock)
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Obrigado por sua mensagem! Entraremos em contato em breve.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
